@@ -154,25 +154,31 @@ nav a:hover {
     margin-bottom: 15px;
 }
 
-
 .about-box {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-
-    margin: 30px 5%;
+    display: grid;
+    grid-template-columns: 230px 1fr 250px;
+    gap: 35px;
+    width: 85%;
+    margin: 30px auto;
     padding: 30px 40px;
 
     border: 1px solid #d5c5b5;
     border-radius: 25px;
+    background-color: #ffffff;
+
+    min-height: 0;
+    height: auto;
+    align-items: start;
+    box-sizing: border-box;
 }
 
 .about-image {
-    width: 230px;
+    width: 170px;
     flex-shrink: 0;
     position: relative;
     transform: rotate(-5deg);
 }
+
 
 .about-image::before {
     content: "";
@@ -184,7 +190,10 @@ nav a:hover {
     background-color: #d8c39e;
     transform: rotate(-8deg);
     opacity: 0.8;
+    z-index: 2;
 }
+
+
 
 .about-image img {
     width: 100%;
@@ -192,9 +201,10 @@ nav a:hover {
     border-radius: 3px;
 }
 
-.about-text {
-    flex: 1;
-}
+
+    .about-text {
+        display: block;
+    }
 
 .about-text h2 {
     color: #6b1f2a;
@@ -207,18 +217,17 @@ nav a:hover {
     margin-top: 0;
     margin-bottom: 15px;
 }
-
-.about-image::before {
-    content: "";
-    position: absolute;
-    top: -15px;
-    left: 35%;
-    width: 70px;
-    height: 25px;
-    background-color: #d8c39e;
-    transform: rotate(-8deg);
-    opacity: 0.8;
-}
+    .about-image::before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: 35%;
+        width: 70px;
+        height: 25px;
+        background-color: #d8c39e;
+        transform: rotate(-8deg);
+        opacity: 0.8;
+    }
 
 .about-quote {
     border-left: 1px solid #c8b8a5;
@@ -306,54 +315,78 @@ nav a:hover {
 
     color: #2f2925;
 }
-
 .projects {
     margin: 40px 5%;
 }
-
 
 .projects h2 {
     font-family: "Bodoni Moda", serif;
     color: #6b1f2a;
     font-size: 2.5rem;
+    margin-bottom: 35px;
 }
 
+.portfolio-overview {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 50px;
 
+    width: 90%;
+    margin: 60px auto;
+
+    align-items: start;
+}
+
+.projects-column h2,
+.experience-column h2 {
+    font-family: "Bodoni Moda", serif;
+    color: #6b1f2a;
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.vertical-line {
+    width: 1px;
+    height: 100%;
+    min-height: 550px;
+    background-color: #c8b8a5;
+}
+
+.projects-column {
+    min-width: 0;
+}
 .project-card {
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 35px;
 
-    width: 60%;
-    max-width: 700px;
+    width: 100%;
+    box-sizing: border-box;
 
     padding: 20px 25px;
 
     border: 1px solid #d5c5b5;
     border-radius: 20px;
 
-    background-color: #faf8f3;
+    background-color: #ffffff;
 
     align-items: center;
 }
 
 .project-image {
-    width: 200px;
+    width: 280px;
 }
 
 .project-image img {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    height: auto;
     display: block;
     border-radius: 10px;
 }
-
 .projekt-info h3 {
     font-family: "Bodoni Moda", serif;
     font-size: 1.8rem;
     color: #2f2925;
-
     margin-top: 0;
     margin-bottom: 10px;
 }
@@ -362,9 +395,7 @@ nav a:hover {
     font-family: "Libre Baskerville", serif;
     font-size: 0.95rem;
     line-height: 1.6;
-
     color: #2f2925;
-
     margin-bottom: 20px;
 }
 
@@ -373,78 +404,84 @@ nav a:hover {
     gap: 12px;
 }
 
-.projekt-tags span {
+.project-tags span {
     background-color: #eadccc;
-
     color: #6b1f2a;
-
     padding: 8px 20px;
-
     border-radius: 30px;
-
     font-family: "Libre Baskerville", serif;
     font-size: 0.85rem;
 }
+.portfolio-overview {
+    display: grid;
+    grid-template-columns: 1fr 1px 0.8fr;
+    gap: 60px;
+    margin: 60px 5%;
+    align-items: start;
+}
+.experience-column h2 {
+    font-family: "Bodoni Moda", serif;
+    color: #6b1f2a;
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.experience-column ul {
+    padding-left: 25px;
+    margin-bottom: 60px;
+}
+
+.experience-column li {
+    font-family: "Libre Baskerville", serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.experience-column li p {
+    margin: 5px 0 0;
+}
+
 footer {
     width: 100%;
-    min-width: 100vw;
-    margin: 0;
     padding: 20px;
     box-sizing: border-box;
     background-color: #5c1b20;
     color: white;
     flex-shrink: 0;
-
-
-
-    .contact-icons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 25px;
-        transform: translateX(80px);
-    }
-
-    .contact-icons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 25px;
-        transform: translateX(80px)
-    }
-
-    .contact-icons a {
-        color: #5c1b20;
-        background-color: white;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 30px;
-        text-decoration: none;
-    }
-
-    .contact-icons i {
-        font-size: 30px;
-    }
-
-    .contact-text {
-        color: white;
-        font-size: 20px;}
-
-    .line {
-        height: 60px;
-        border-left: 1px solid white;
-        margin-right: 30px;}
 }
 
-@media screen and (max-width: 500px) {
-    .container {
-        background-color: #ffffff;
-    }
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
 }
 
+.contact-icons a {
+    color: #5c1b20;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    text-decoration: none;
+}
 
+.contact-icons i {
+    font-size: 30px;
+}
 
+.contact-text {
+    color: white;
+    font-size: 20px;
+}
 
+.line {
+    height: 60px;
+    border-left: 1px solid white;
+    margin-right: 30px;
+}
